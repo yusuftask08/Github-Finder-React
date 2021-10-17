@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 export class Navbar extends Component {
   render() {
     return (
@@ -13,12 +13,13 @@ export class Navbar extends Component {
     );
   }
 }
-
-Navbar.defaultPropos = {
-  title: "Github", // eğer props yoksa default olarak bu gelir.
+// eğer props yoksa default olarak burası gelir.
+Navbar.defaultProps = {
+  title: "Github Finder",
   icon: "fab fa-github",
 };
-Navbar.prototype = {
+
+Navbar.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
 };
