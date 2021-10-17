@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TodoApp from './components/TodoApp';
-import './styles/main.scss';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles/main.scss";
 
-ReactDOM.render(<TodoApp />, document.getElementById('root'));
+const template = <p>Hello React !</p>;
+ReactDOM.render(template, document.getElementById("root"));
