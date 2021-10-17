@@ -8,6 +8,7 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.searchUsers = this.searchUsers.bind(this);
+    this.clearUsers = this.clearUsers.bind(this);
     this.state = {
       loading: false,
       users: [],
@@ -23,11 +24,21 @@ export class App extends Component {
         );
     }, 1000);
   }
+
+  clearUsers() {
+    this.setState({
+      users: [],
+    });
+  }
   render() {
     return (
       <>
         <Navbar />
-        <Search searchUsers={this.searchUsers} />
+        <Search
+          searchUsers={this.searchUsers}
+          clearUsers={this.clearUsers}
+          showBtn={this.state.users.length > 0 ? true : false}
+        />
         <Users users={this.state.users} loading={this.state.loading} />
       </>
     );

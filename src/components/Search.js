@@ -19,6 +19,7 @@ export class Search extends Component {
   onSubmit(e) {
     e.preventDefault();
     this.props.searchUsers(this.state.keyword);
+
     this.setState({
       keyword: "",
     });
@@ -26,8 +27,8 @@ export class Search extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <div className="container mt-5">
+      <div className="container my-3">
+        <form onSubmit={this.onSubmit}>
           <div className="input-group">
             <input
               value={this.state.keyword}
@@ -39,8 +40,16 @@ export class Search extends Component {
               Search
             </button>
           </div>
-        </div>
-      </form>
+        </form>
+        {this.props.showBtn && (
+          <button
+            onClick={this.props.clearUsers}
+            className="btn btn-secondary mt-2 btn-sm btn-block"
+          >
+            Clear Result
+          </button>
+        )}
+      </div>
     );
   }
 }
