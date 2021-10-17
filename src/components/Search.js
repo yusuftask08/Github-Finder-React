@@ -18,11 +18,14 @@ export class Search extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.searchUsers(this.state.keyword);
-
-    this.setState({
-      keyword: "",
-    });
+    if (this.state.keyword === "") {
+      this.props.setAlert("lütfen bir anahtar kelime giriniz", "danger");
+    } else {
+      this.props.searchUsers(this.state.keyword);
+      this.setState({
+        keyword: "",
+      });
+    }
   }
 
   render() {
