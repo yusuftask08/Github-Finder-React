@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -10,16 +10,15 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'dist')
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
-             {
-                 test: /\.scss$/,
-                 use: ['style-loader','css-loader','sass-loader']
-             }
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            }
         ]
-    }       
+    }
 }
