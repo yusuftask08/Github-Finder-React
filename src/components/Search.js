@@ -19,7 +19,7 @@ export class Search extends Component {
   onSubmit(e) {
     e.preventDefault();
     if (this.state.keyword === "") {
-      this.props.setAlert("lütfen bir anahtar kelime giriniz", "danger");
+      this.props.setAlert("lütfen bir anahtar kelime giriniz !", "danger");
     } else {
       this.props.searchUsers(this.state.keyword);
       this.setState({
